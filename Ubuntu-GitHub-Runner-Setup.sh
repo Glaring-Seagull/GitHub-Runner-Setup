@@ -26,7 +26,7 @@ echo \
 sudo apt update -y
 
 #install docker
-sudo apt install docker-ce docker-ce-cli containerd.io
+sudo apt install docker-ce docker-ce-cli containerd.io -y
 
 #Giver currently logged in user permission for docker
 sudo usermod -a -G docker $USER
