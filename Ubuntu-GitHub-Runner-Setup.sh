@@ -7,7 +7,7 @@
 #Note that the token is unique to each project and needs to be input by the user, they can get the token from github runner setting
 #web address should look like https://github.com/UserName/ProjectName/settings/actions/runners/
 read -p "Please input your runner token (can be found in runner settings for project in github)" gitToken
-
+read - "Please enter full github url..." giturl
 #update packages
 sudo apt update -y && sudo apt upgrade -y
 
@@ -44,7 +44,7 @@ curl -o actions-runner-linux-x64-2.289.1.tar.gz -L https://github.com/actions/ru
 tar xzf ./actions-runner-linux-x64-2.289.1.tar.gz
 
 #Create the runner and start the configuration experiance (uses token prompted for at beggining)
-./config.sh --url https://github.com/Glaring-Seagull/my-project --token $gitToken
+./config.sh --url $giturl --token $gitToken
 
 #start the runner
 ./run.sh
